@@ -6,20 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.myapplication.R
-import com.example.myapplication.customview.WriteView
 
-class WriteViewFragment : Fragment() {
-
-    var writeView: WriteView? = null
-
+class PaintTestFragment :Fragment(){
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_write_view, container, false)
+        return inflater.inflate(R.layout.fragment_paint_test,container,false)
     }
-
-
 }

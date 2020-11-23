@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="MyCircleColor" >
+        <attr name="circleColor" format="color"/>
+        <attr name="circleWith" format="dimension"/>
+        <attr name="circleHeight" format="dimension"/>
+    </declare-styleable>
+</resources>
