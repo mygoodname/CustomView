@@ -5,9 +5,10 @@ import android.graphics.Canvas
 import android.graphics.Paint
 import android.util.AttributeSet
 import android.view.View
+import android.widget.FrameLayout
 import com.example.myapplication.R
 
-class WriteView : View {
+class WriteView : FrameLayout {
 
     var defColor = R.color.colorPrimary
 
