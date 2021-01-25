@@ -16,5 +16,22 @@
         android:padding="5dp"
         android:layout_margin="10dp"
        />
-
+    <TextView
+        android:id="@+id/pintTest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="pintTest"
+        android:gravity="center"
+        android:padding="5dp"
+        android:layout_margin="10dp"
+        />
+    <TextView
+        android:id="@+id/flowLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="自定义流式布局"
+        android:gravity="center"
+        android:padding="5dp"
+        android:layout_margin="10dp"
+        />
 </LinearLayout>

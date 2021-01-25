@@ -3,6 +3,7 @@ package com.example.myapplication.customview
 import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Paint
+import android.graphics.Path
 import android.util.AttributeSet
 import android.view.View
 import com.example.myapplication.R
@@ -11,6 +12,8 @@ class PintTest :View{
 
     var mPaint: Paint?=null
     var referencePaint:Paint?=null
+    var mPaint1:Paint?=null
+    var mPath:Path?=null
 
     constructor(context: Context):super(context){
         initPaint()
@@ -24,9 +27,10 @@ class PintTest :View{
 
     fun initPaint(){
         mPaint= Paint()
+        mPaint1=Paint()
         mPaint?.setColor(resources.getColor(R.color.redColor))
 //        mPaint?.strokeWidth=50f
-
+        mPath= Path()
         //设置style
         //Paint.Style.FILL：填充内部
         //Paint.Style.FILL_AND_STROKE  ：填充内部和描边
@@ -72,6 +76,14 @@ class PintTest :View{
         }
         referencePaint?.let {
             canvas?.drawText("测试类横不错的哟！嗯嗯嗯嗯嗯呃",300f,850f,it)
+        }
+        mPath?.let {
+            it.moveTo(500f,900f)
+            it.lineTo(600f,900f)
+            it.lineTo(800f,1100f)
+            it.lineTo(300f,1100f)
+            it.close()
+            mPaint?.let { it1 -> canvas?.drawPath(it, it1) }
         }
 
     }

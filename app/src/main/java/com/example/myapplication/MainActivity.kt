@@ -18,7 +18,11 @@ class MainActivity : AppCompatActivity() {
     fun initView() {
         overWriteView = findViewById(R.id.overWriteView)
         overWriteView?.setOnClickListener {
-            CommonActivity.startActivity(this, ViewType.writeView)
+            CommonActivity.startActivity(this, ViewType.WriteView)
+        }
+        var flowLayout:TextView=findViewById(R.id.flowLayout)
+        flowLayout?.setOnClickListener{
+            CommonActivity.startActivity(this, ViewType.FlowLayout)
         }
     }
 
