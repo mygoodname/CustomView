@@ -40,6 +40,7 @@ class FlowLayoutTwo : ViewGroup {
         clearMeasureParams()
         //获取父布局给的宽度size
         var selfWith = MeasureSpec.getSize(widthMeasureSpec)
+        var selfHeight = MeasureSpec.getSize(heightMeasureSpec)
         for (i in 0 until childCount) {
             var childView=getChildAt(i)
             //获取子view 的layoutParams
@@ -84,13 +85,24 @@ class FlowLayoutTwo : ViewGroup {
                 lineHeights.add(lineUsedHeight)// 记录该行高
             }
         }
-        ///判断宽度 子view的宽度是否比自身分得的大  如果大就用自己分得的宽度
+        /*///判断宽度 子view的宽度是否比自身分得的大  如果大就用自己分得的宽度
         if(MeasureSpec.getMode(widthMeasureSpec)==MeasureSpec.AT_MOST||MeasureSpec.getMode(widthMeasureSpec)==MeasureSpec.EXACTLY){
             if(parentWith>selfWith)
             parentWith=selfWith
-        }
+        }*/
+
+        ///判断MeasureSpec 的mode  如果是EXACTLY （给定的值或match_parent) 那么宽高就是给定的大小
+        var widthMode=MeasureSpec.getMode(widthMeasureSpec)
+        var heightMode=MeasureSpec.getMode(heightMeasureSpec)
+//        var realWidth=0
+//        var realHeight=0
+        var realWidth = if (widthMode==MeasureSpec.EXACTLY) selfWith
+        else parentWith
+        var realHeight = if(heightMode==MeasureSpec.EXACTLY) selfHeight
+        else parentHeight
+
         //测量自己
-        setMeasuredDimension(parentWith, parentHeight)
+        setMeasuredDimension(realWidth, realHeight)
     }
 
     override fun onLayout(p0: Boolean, p1: Int, p2: Int, p3: Int, p4: Int) {
