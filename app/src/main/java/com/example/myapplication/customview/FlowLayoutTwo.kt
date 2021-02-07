@@ -30,8 +30,8 @@ class FlowLayoutTwo : ViewGroup {
 
     //记录每行的高度，用于onLayout方法
     private var lineHeights: MutableList<Int> = ArrayList()
-    private var lineUsedWidth = 0//每行使用的宽度
-    private var lineUsedHeight = 0//每行使用的宽度
+    private var lineUsedWidth = 0 //每行使用的宽度
+    private var lineUsedHeight = 0 //每行使用的宽度
     private var parentWith = 0 //子view所需的总宽度
     private var parentHeight = 0 //子view所需总的高度
 
