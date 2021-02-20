@@ -8,9 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 
 class FlowLayoutTwo : ViewGroup {
-
+    //
     constructor(context: Context) : super(context)
-
+    //用于LayoutInflate.inflate()方法读取xml时反射出该类对象时调用不重写代码运行时会报异常
     constructor(context: Context, attrs: AttributeSet) : super(context, attrs)
 
     constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(

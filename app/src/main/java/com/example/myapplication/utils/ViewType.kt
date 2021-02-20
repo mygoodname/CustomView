@@ -5,5 +5,6 @@ class ViewType {
         var WriteView=1
         var Paint=2
         var FlowLayout=3
+        var ViewPager=4
     }
 }

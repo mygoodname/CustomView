@@ -2,11 +2,13 @@ package com.example.myapplication
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.fragment.FlowLayoutFragment
 import com.example.myapplication.fragment.PaintTestFragment
 import com.example.myapplication.fragment.WriteViewFragment
+import com.example.myapplication.fragment.viewpager.ViewPagerTestFragment
 import com.example.myapplication.utils.ViewType
 
 class CommonActivity : AppCompatActivity() {
@@ -46,11 +48,14 @@ class CommonActivity : AppCompatActivity() {
             ViewType.FlowLayout -> {
                 transaction.add(R.id.viewContainer, FlowLayoutFragment())
             }
+            ViewType.ViewPager ->{
+                transaction.add(R.id.viewContainer,ViewPagerTestFragment())
+            }
             else ->{
                 transaction.add(R.id.viewContainer, FlowLayoutFragment())
             }
         }
+        Log.d("trackLife","CommonActivity --> transaction.commit()")
         transaction.commit()
     }
-
 }
