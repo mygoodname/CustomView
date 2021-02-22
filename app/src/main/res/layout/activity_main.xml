@@ -43,5 +43,13 @@
         android:padding="5dp"
         android:layout_margin="10dp"
         />
-
+    <TextView
+        android:id="@+id/kotlin_coroutine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="kotlinCoroutineTest"
+        android:gravity="center"
+        android:padding="5dp"
+        android:layout_margin="10dp"
+        />
 </LinearLayout>

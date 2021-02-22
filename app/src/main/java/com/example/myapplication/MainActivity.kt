@@ -1,9 +1,11 @@
 package com.example.myapplication
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
+import com.example.myapplication.coroutine.CoroutineTestActivity
 import com.example.myapplication.utils.ViewType
 
 class MainActivity : AppCompatActivity() {
@@ -18,16 +20,21 @@ class MainActivity : AppCompatActivity() {
 
     fun initView() {
         overWriteView = findViewById(R.id.overWriteView)
+        var flowLayout:TextView=findViewById(R.id.flowLayout)
+        var viewPager: TextView =findViewById(R.id.viewPager)
+        var kotlinCoroutineTest:TextView=findViewById(R.id.kotlin_coroutine)
+
         overWriteView?.setOnClickListener {
             CommonActivity.startActivity(this, ViewType.WriteView)
         }
-        var flowLayout:TextView=findViewById(R.id.flowLayout)
         flowLayout?.setOnClickListener{
             CommonActivity.startActivity(this, ViewType.FlowLayout)
         }
-        var viewPager: TextView =findViewById(R.id.viewPager)
         viewPager?.setOnClickListener{
             CommonActivity.startActivity(this,ViewType.ViewPager)
+        }
+        kotlinCoroutineTest?.setOnClickListener{
+            CoroutineTestActivity.startActivity(this)
         }
     }
 
