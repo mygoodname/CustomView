@@ -89,9 +89,6 @@ class FlowLayout @JvmOverloads constructor(
             }
             curT=linesHeights[index]+verticalSpace
             curL=paddingLeft
-
-
-
         }
     }
     fun clearLines(){

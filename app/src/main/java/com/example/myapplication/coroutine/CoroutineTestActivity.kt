@@ -3,7 +3,6 @@ package com.example.myapplication.coroutine
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.util.Log
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -43,6 +42,7 @@ class CoroutineTestActivity : AppCompatActivity() ,CoroutineScope by MainScope()
                 Log.e(TAG,"test   ${textView?.text}")
             }
         }
+
     }
 
     suspend fun fetchData():String{
