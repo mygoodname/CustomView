@@ -1,11 +1,10 @@
 package com.example.myapplication
 
-import android.content.Intent
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.viewpager.widget.ViewPager
 import com.example.myapplication.coroutine.CoroutineTestActivity
+import com.example.myapplication.touchevent.TouchEventDispatchTestActivity
 import com.example.myapplication.utils.ViewType
 
 class MainActivity : AppCompatActivity() {
@@ -23,6 +22,7 @@ class MainActivity : AppCompatActivity() {
         var flowLayout:TextView=findViewById(R.id.flowLayout)
         var viewPager: TextView =findViewById(R.id.viewPager)
         var kotlinCoroutineTest:TextView=findViewById(R.id.kotlin_coroutine)
+        var touchEventTest:TextView=findViewById(R.id.touchEventTest)
 
         overWriteView?.setOnClickListener {
             CommonActivity.startActivity(this, ViewType.WriteView)
@@ -35,6 +35,9 @@ class MainActivity : AppCompatActivity() {
         }
         kotlinCoroutineTest?.setOnClickListener{
             CoroutineTestActivity.startActivity(this)
+        }
+        touchEventTest?.setOnClickListener{
+            TouchEventDispatchTestActivity.startActivity(this)
         }
     }
 

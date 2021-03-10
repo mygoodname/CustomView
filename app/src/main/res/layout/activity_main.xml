@@ -52,4 +52,13 @@
         android:padding="5dp"
         android:layout_margin="10dp"
         />
+    <TextView
+        android:id="@+id/touchEventTest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="touchEvent事件测试"
+        android:gravity="center"
+        android:padding="5dp"
+        android:layout_margin="10dp"
+        />
 </LinearLayout>

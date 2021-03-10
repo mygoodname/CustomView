@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <ScrollView
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/swipeRefresh">
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <LinearLayout
@@ -13,16 +14,35 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:visibility="visible"/>
+            <!--
+             app:tabIndicatorColor=""   指示器颜色
+             app:tabIndicatorHeight=""  指示器高度，设置为0就是没有指示器
+             app:tabTextColor=""    Tab文本默认颜色
+             app:tabSelectedTextColor=""     Tab文本被选中后的颜色
+             app:tabTextAppearance=""      为Tab文本设置样式，一般是需要为Tab加图标时使用
+             app:tabMode=""  只有两个值：fixed、scrollable
+             其中 fixed用于标题栏少的情况，每个Tab可以平分屏幕宽度
+             其中 scrollable用于标题栏多出屏幕的情况，如果标题栏少的时候用很难看，占不满屏幕
+             app:tabGravity="center" 整体居中，不可与上共用
+             app:tabBackground=""    TabLayout背景，和android:background=""效果一样
+             app:tabGravity=""    对齐方式:  居中显示center、fill填满
+             -->
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tablayout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                app:tabGravity="fill"
+                app:tabIndicatorHeight="1dp"
+                app:tabMode="fixed"
+                app:tabSelectedTextColor="#FF4081"
+                app:tabTextColor="#000"/>
 
-            <androidx.viewpager.widget.ViewPager
+            <com.example.myapplication.fragment.viewpager.MyViewPager
                 android:id="@+id/viewpager"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content" />
         </LinearLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
