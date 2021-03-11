@@ -4,14 +4,16 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/swipeRefresh">
-    <androidx.core.widget.NestedScrollView
+    <!--    <androidx.core.widget.NestedScrollView-->
+    <com.example.myapplication.touchevent.MyNestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-            <androidx.recyclerview.widget.RecyclerView
+<!--            <androidx.recyclerview.widget.RecyclerView-->
+            <com.example.myapplication.touchevent.MyNestRecycleView
                 android:id="@+id/recyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -29,20 +31,26 @@
              app:tabBackground=""    TabLayout背景，和android:background=""效果一样
              app:tabGravity=""    对齐方式:  居中显示center、fill填满
              -->
-            <com.google.android.material.tabs.TabLayout
-                android:id="@+id/tablayout"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:tabGravity="fill"
-                app:tabIndicatorHeight="1dp"
-                app:tabMode="fixed"
-                app:tabSelectedTextColor="#FF4081"
-                app:tabTextColor="#000"/>
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tablayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:tabGravity="fill"
+                    app:tabIndicatorHeight="1dp"
+                    app:tabMode="fixed"
+                    app:tabSelectedTextColor="#FF4081"
+                    app:tabTextColor="#000"/>
 
-            <com.example.myapplication.fragment.viewpager.MyViewPager
-                android:id="@+id/viewpager"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                <com.example.myapplication.fragment.viewpager.MyViewPager
+                    android:id="@+id/viewpager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
         </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
+    </com.example.myapplication.touchevent.MyNestedScrollView>
 </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

@@ -38,6 +38,7 @@ class TouchEventDispatchTestActivity: AppCompatActivity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        supportActionBar?.hide()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_touchevent_dispatch_layout)
         initView()
@@ -49,6 +50,7 @@ class TouchEventDispatchTestActivity: AppCompatActivity() {
         recyclerView=findViewById(R.id.recyclerView)
         swipeRefresh=findViewById(R.id.swipeRefresh)
 
+        swipeRefresh?.measuredHeight
         recyclerView?.layoutManager=LinearLayoutManager(this)
         recyclerView?.adapter=MyRecycleViewAdapter()
         fragments= ArrayList()
@@ -75,15 +77,13 @@ class TouchEventDispatchTestActivity: AppCompatActivity() {
         viewpager?.adapter=MyViewPagerAdapter()
         tablayout?.setupWithViewPager(viewpager)
 
-        var one = tablayout?.getTabAt(0);
-        var two = tablayout?.getTabAt(1);
-        var three = tablayout?.getTabAt(2);
+        var one = tablayout?.getTabAt(0)
+        var two = tablayout?.getTabAt(1)
+        var three = tablayout?.getTabAt(2)
 
-
-        one?.setIcon(getResources().getDrawable(R.mipmap.ic_ask_selected));
-        two?.setIcon(getResources().getDrawable(R.mipmap.ic_selected_user_center));
-        three?.setIcon(getResources().getDrawable(R.mipmap.ic_main_bookshelf_select));
-
+        one?.setIcon(getResources().getDrawable(R.mipmap.ic_ask_selected))
+        two?.setIcon(getResources().getDrawable(R.mipmap.ic_selected_user_center))
+        three?.setIcon(getResources().getDrawable(R.mipmap.ic_main_bookshelf_select))
 
     }
 

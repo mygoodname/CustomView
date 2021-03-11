@@ -19,6 +19,8 @@
         <activity android:name=".CommonActivity"/>
         <activity android:name=".coroutine.CoroutineTestActivity"/>
         <activity android:name=".touchevent.TouchEventDispatchTestActivity"/>
+
+
     </application>
 
 </manifest>
