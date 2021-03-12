@@ -59,7 +59,8 @@ class TouchEventDispatchTestActivity: AppCompatActivity() {
 //            tablayout?.addTab(TabLayout.Tab())
 //        }
         for ((itex, velue) in titles.withIndex()){
-            var recyclerView=RecyclerView(this)
+//            var recyclerView=RecyclerView(this)
+            var recyclerView=MyNestRecyclerView(this)
             recyclerView.layoutManager=LinearLayoutManager(this)
             recyclerView.adapter=MyRecycleViewAdapter()
             recycleViews.add(recyclerView)

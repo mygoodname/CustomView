@@ -5,7 +5,7 @@ import android.util.AttributeSet
 import android.util.Log
 import androidx.recyclerview.widget.RecyclerView
 
-class MyNestRecycleView :RecyclerView{
+class MyNestRecyclerView :RecyclerView{
     var tag:String="MyNestRecycleView : "
     constructor(context:Context) :super(context)
     constructor(context:Context,attr:AttributeSet) :super(context,attr)
