@@ -4,7 +4,8 @@ import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.coroutine.CoroutineTestActivity
-import com.example.myapplication.touchevent.TouchEventDispatchTestActivity
+import com.example.myapplication.touchevent.DispatchEventActivity
+import com.example.myapplication.touchevent.NestedScrollTestActivity
 import com.example.myapplication.utils.ViewType
 
 class MainActivity : AppCompatActivity() {
@@ -24,7 +25,8 @@ class MainActivity : AppCompatActivity() {
         var flowLayout:TextView=findViewById(R.id.flowLayout)
         var viewPager: TextView =findViewById(R.id.viewPager)
         var kotlinCoroutineTest:TextView=findViewById(R.id.kotlin_coroutine)
-        var touchEventTest:TextView=findViewById(R.id.touchEventTest)
+        var nestedScrollTest:TextView=findViewById(R.id.nestedScrollTest)
+        var dispatchEvent:TextView=findViewById(R.id.dispatchEvent)
 
         overWriteView?.setOnClickListener {
             CommonActivity.startActivity(this, ViewType.WriteView)
@@ -38,8 +40,11 @@ class MainActivity : AppCompatActivity() {
         kotlinCoroutineTest?.setOnClickListener{
             CoroutineTestActivity.startActivity(this)
         }
-        touchEventTest?.setOnClickListener{
-            TouchEventDispatchTestActivity.startActivity(this)
+        nestedScrollTest?.setOnClickListener{
+            NestedScrollTestActivity.startActivity(this)
+        }
+        dispatchEvent?.setOnClickListener{
+            DispatchEventActivity.startActivity(this)
         }
     }
 

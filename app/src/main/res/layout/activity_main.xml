@@ -53,10 +53,19 @@
         android:layout_margin="10dp"
         />
     <TextView
-        android:id="@+id/touchEventTest"
+        android:id="@+id/nestedScrollTest"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="touchEvent事件测试"
+        android:text="嵌套滑动测试"
+        android:gravity="center"
+        android:padding="5dp"
+        android:layout_margin="10dp"
+        />
+    <TextView
+        android:id="@+id/dispatchEvent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="事件分发"
         android:gravity="center"
         android:padding="5dp"
         android:layout_margin="10dp"

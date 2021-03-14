@@ -18,9 +18,9 @@ import androidx.viewpager.widget.PagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.example.myapplication.R
 import com.google.android.material.tabs.TabLayout
-import kotlinx.android.synthetic.main.activity_touchevent_dispatch_layout.*
 
-class TouchEventDispatchTestActivity: AppCompatActivity() {
+
+class NestedScrollTestActivity: AppCompatActivity() {
 
     var tablayout:TabLayout?=null
     var viewpager:ViewPager?=null
@@ -32,7 +32,7 @@ class TouchEventDispatchTestActivity: AppCompatActivity() {
 
     companion object{
         fun startActivity(activity: Activity){
-            var intent= Intent(activity, TouchEventDispatchTestActivity::class.java)
+            var intent= Intent(activity, NestedScrollTestActivity::class.java)
             activity.startActivity(intent)
         }
     }
@@ -40,7 +40,7 @@ class TouchEventDispatchTestActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         supportActionBar?.hide()
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_touchevent_dispatch_layout)
+        setContentView(R.layout.activity_nestedscoll_layout)
         initView()
     }
 
@@ -116,7 +116,7 @@ class TouchEventDispatchTestActivity: AppCompatActivity() {
 //        var dataList:MutableList<String> = MutableList<String>()
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-            var item=LayoutInflater.from(this@TouchEventDispatchTestActivity).inflate(
+            var item=LayoutInflater.from(this@NestedScrollTestActivity).inflate(
                 R.layout.item_recycleview_layout,
                 parent,
                 false
