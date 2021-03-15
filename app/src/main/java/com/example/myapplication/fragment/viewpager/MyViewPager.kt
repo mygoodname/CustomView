@@ -2,26 +2,26 @@ package com.example.myapplication.fragment.viewpager
 
 import android.content.Context
 import android.util.AttributeSet
+import android.view.ViewGroup
 import androidx.core.view.children
 import androidx.viewpager.widget.ViewPager
+import java.util.jar.Attributes
 import kotlin.math.max
 
-class MyViewPager : ViewPager {
-
-    constructor(context:Context, attrs: AttributeSet) : super(context,attrs)
-    constructor(context:Context) : super(context)
+//重写onMeasure 方法解决viewPager的 height 设置为wrap_content时无效的bug
+class MyViewPager :ViewPager{
+    constructor(context:Context):super (context)
+    constructor(context: Context,attr:AttributeSet):super (context,attr)
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
-        var customHeight=0
-        for (item in children){
-            var childHeightSpec=getChildMeasureSpec(heightMeasureSpec,0,item.layoutParams.height)
-            var childWidthSpec= getChildMeasureSpec(widthMeasureSpec,0,item.layoutParams.width)
-            item.measure(childWidthSpec,childHeightSpec)
-            var childHeight=item.measuredHeight
-            customHeight= max(childHeight,customHeight)
+        var MaxHeight=0
+        for (childView in children){
+            var childLP=childView.layoutParams
+            childView.measure(widthMeasureSpec, getChildMeasureSpec(heightMeasureSpec,0,childLP.height))
+            var childMeasureHeight=childView.measuredHeight
+            MaxHeight= max(childMeasureHeight,MaxHeight)
         }
-        var myHeightMeasureSpec=MeasureSpec.makeMeasureSpec(customHeight,MeasureSpec.EXACTLY)
+        var myHeightMeasureSpec=MeasureSpec.makeMeasureSpec(MaxHeight,MeasureSpec.EXACTLY)
         super.onMeasure(widthMeasureSpec, myHeightMeasureSpec)
     }
-
 }

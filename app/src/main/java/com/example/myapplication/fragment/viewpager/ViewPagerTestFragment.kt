@@ -9,6 +9,7 @@ import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
+import androidx.fragment.app.FragmentStatePagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.example.myapplication.R
 
@@ -110,7 +111,7 @@ class ViewPagerTestFragment: Fragment(),View.OnClickListener {
         checkTab()
     }
 
-    class MyViewPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
+    class MyViewPagerAdapter(fm: FragmentManager) : FragmentStatePagerAdapter(fm) {
 
         var viewList:MutableList<Fragment> =ArrayList()
 

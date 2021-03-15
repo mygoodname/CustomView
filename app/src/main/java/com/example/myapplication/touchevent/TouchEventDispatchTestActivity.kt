@@ -59,8 +59,7 @@ class TouchEventDispatchTestActivity: AppCompatActivity() {
 //            tablayout?.addTab(TabLayout.Tab())
 //        }
         for ((itex, velue) in titles.withIndex()){
-//            var recyclerView=RecyclerView(this)
-            var recyclerView=MyNestRecyclerView(this)
+            var recyclerView=MyNestRecycleView(this)
             recyclerView.layoutManager=LinearLayoutManager(this)
             recyclerView.adapter=MyRecycleViewAdapter()
             recycleViews.add(recyclerView)
@@ -71,9 +70,6 @@ class TouchEventDispatchTestActivity: AppCompatActivity() {
                 swipeRefresh?.isRefreshing = false
             }, 2000)
         })
-
-
-
 
         viewpager?.adapter=MyViewPagerAdapter()
         tablayout?.setupWithViewPager(viewpager)
