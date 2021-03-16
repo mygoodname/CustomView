@@ -3,6 +3,8 @@ package com.example.myapplication.utils;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
+import android.os.Handler;
+import android.os.Message;
 import android.telephony.PhoneNumberUtils;
 import android.text.Html;
 import android.text.Spannable;
@@ -15,6 +17,8 @@ import android.text.style.ForegroundColorSpan;
 import android.text.style.ImageSpan;
 import android.util.Log;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
 
 import java.io.UnsupportedEncodingException;
 import java.math.BigDecimal;
