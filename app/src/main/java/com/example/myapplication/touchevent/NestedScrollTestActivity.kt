@@ -59,7 +59,7 @@ class NestedScrollTestActivity: AppCompatActivity() {
 //            tablayout?.addTab(TabLayout.Tab())
 //        }
         for ((itex, velue) in titles.withIndex()){
-            var recyclerView=MyNestRecycleView(this)
+            var recyclerView=MyNestRecyclerView(this)
             recyclerView.layoutManager=LinearLayoutManager(this)
             recyclerView.adapter=MyRecycleViewAdapter()
             recycleViews.add(recyclerView)
