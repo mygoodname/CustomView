@@ -50,7 +50,8 @@ class MainActivity : AppCompatActivity() {
         }
         cipher?.setOnClickListener{
             if(PerMissionUtils.check(this)){
-                AESUtil.decryptFile( File("/storage/emulated/0/1.xhtml"),"01.xhtml","/storage/emulated/0/","qDwnHTTcq18X7lGD");
+//                AESUtil.decryptFile( File("file:///android_asset/1.xhtml"),"01.xhtml","file:///android_asset/","qDwnHTTcq18X7lGD");
+                AESUtil.decryptFile( assets.open("1.xhtml"),"01.xhtml","/storage/emulated/0/","qDwnHTTcq18X7lGD");
             }
         }
     }

@@ -318,7 +318,46 @@ public class AESUtil {
         }
         return decryptFile;
     }
-
+    /**
+     * AES方式解密文件
+     * @param sourceFile 源文件
+     * @param toFile 目标文件
+     * @param dir 文件存储路径
+     * @param key 密钥
+     * @return
+     */
+    public static File decryptFile(InputStream inputStream, String toFile, String dir, String key) {
+        // 解密文件
+        File decryptFile = null;
+        // 文件输出流
+        OutputStream outputStream = null;
+        try {
+            // 创建解密文件
+            decryptFile = new File(dir + toFile);
+            // 初始化Cipher
+            Cipher cipher = initAESCipher(key, Cipher.DECRYPT_MODE);
+            // 创建输出流
+            outputStream = new FileOutputStream(decryptFile);
+            // 获取解密输出流
+            CipherOutputStream cipherOutputStream = new CipherOutputStream(outputStream, cipher);
+            // 创建缓冲字节数组
+            byte[] buffer = new byte[1024*2];
+            int len;
+            // 读取解密并写入
+            while ((len = inputStream.read(buffer)) >= 0) {
+                cipherOutputStream.write(buffer, 0, len);
+                cipherOutputStream.flush();
+            }
+            // 关闭流
+            cipherOutputStream.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            closeStream(inputStream);
+            closeStream(outputStream);
+        }
+        return decryptFile;
+    }
     /**
      * 初始化 AES Cipher
      * @param key 密钥
