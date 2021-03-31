@@ -11,11 +11,11 @@ class MyListView :ListView{
     constructor(context:Context,attr:AttributeSet,defStyleAttr:Int):super(context,attr,defStyleAttr)
 
     override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
-        return false
+        return true
     }
-
-    override fun onInterceptTouchEvent(ev: MotionEvent?): Boolean {
-        return super.onInterceptTouchEvent(ev)
-    }
+//
+//    override fun onInterceptTouchEvent(ev: MotionEvent?): Boolean {
+//        return super.onInterceptTouchEvent(ev)
+//    }
 
 }
