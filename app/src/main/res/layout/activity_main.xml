@@ -71,10 +71,19 @@
         android:layout_margin="10dp"
         />
     <TextView
-        android:id="@+id/cipher"
+        android:id="@+id/cipherAES"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="解密"
+        android:text="AES解密"
+        android:gravity="center"
+        android:padding="5dp"
+        android:layout_margin="10dp"
+        />
+    <TextView
+        android:id="@+id/cipherRSA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="RSA解密"
         android:gravity="center"
         android:padding="5dp"
         android:layout_margin="10dp"
